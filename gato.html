@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @CHARSET "ISO-8859-1";
+
+        #juego {
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            left: 50%;
+            top: 50%;
+            margin-left: -275px;
+            margin-top: -275px;
+
+            -moz-box-shadow: 2px 2px 3px 3px black;
+            -webkik-box-shadow: 2px 2px 3px 3px black;
+            box-shadow: 2px 2px 3px 3px;
+        }
+
+        button {
+            width: 150px;
+            height: 150px;
+            border: none;
+            position: absolute;
+            font-size: 100px;
+            color: white;
+        }
+
+        .clicked {
+            background-color: gray;
+        }
+
+        .buttons {
+            background-color: blue;
+        }
+
+        .buttons:HOVER {
+            background-color: red;
+        }
+
+        #b11 {
+            top: 25px;
+            left: 25px;
+        }
+
+        #b12 {
+            top: 25px;
+            left: 200px;
+        }
+
+        #b13 {
+            top: 25px;
+            left: 375px;
+        }
+
+        #b21 {
+            top: 200px;
+            left: 25px;
+        }
+
+        #b22 {
+            top: 200px;
+            left: 200px;
+        }
+
+        #b23 {
+            top: 200px;
+            left: 375px;
+        }
+
+        #b31 {
+            top: 375px;
+            left: 25px;
+        }
+
+        #b32 {
+            top: 375px;
+            left: 200px;
+        }
+
+        #b33 {
+            top: 375px;
+            left: 375px;
+        }
+    </style>
+</head>
+
+<body>
+   
+
+    <div class="jugadores">
+        <input onclick="iniciar()" type="submit" value="Comenzar">
+    </div>
+    <div id="juego">
+        <button id="b11" class="buttons" name="b1" onclick="actions(this)"></button>
+        <button id="b12" class="buttons" name="b2" onclick="actions(this)"></button>
+        <button id="b13" class="buttons" name="b3" onclick="actions(this)"></button>
+        <button id="b21" class="buttons" name="b4" onclick="actions(this)"></button>
+        <button id="b22" class="buttons" name="b5" onclick="actions(this)"></button>
+        <button id="b23" class="buttons" name="b6" onclick="actions(this)"></button>
+        <button id="b31" class="buttons" name="b7" onclick="actions(this)"></button>
+        <button id="b32" class="buttons" name="b8" onclick="actions(this)"></button>
+        <button id="b33" class="buttons" name="b9" onclick="actions(this)"></button>
+    </div>
+    <script>
+        var con=1;
+var b1="b1",b2="b2",b3="b3",b4="b4",b5="b5",b6="b6",b7="b7",b8="b8",b9="b9";
+function actions(boton){
+ if(boton.className=="buttons"){
+  boton.className="clicked";
+  var text;
+  if(con%2==0){
+   text="X";
+  }else{
+   text="O";
+  }
+
+  boton.appendChild(document.createTextNode(text));
+  con++;
+  asignation(text,boton);
+
+ }
+}
+function iniciar(){
+   
+   window.location.reload();
+  
+}
+
+function asignation(text,boton){
+ if(b1==boton.name){
+  b1=text;
+ }
+ else if(b2==boton.name){
+  b2=text;
+ }
+ else if(b3==boton.name){
+  b3=text;
+ }
+ else if(b4==boton.name){
+  b4=text;
+ }
+ else if(b5==boton.name){
+  b5=text;
+ }
+ else if(b6==boton.name){
+  b6=text;
+ }
+ else if(b7==boton.name){
+  b7=text;
+ }
+ else if(b8==boton.name){
+  b8=text;
+ }
+ else if(b9==boton.name){
+  b9=text;
+ }
+ validation(text);
+}
+function validation(text){
+ if((b1==b2 && b2==b3)||(b1==b5 && b5==b9)||(b3==b5 && b5==b7)||(b4==b5 && b5==b6)||(b7==b8 && b8==b9)||(b1==b4 && b4==b7)||(b2==b5 && b5==b8)||(b3==b6 && b6==b9)){
+  var con=confirm(text+" ganaste!!!!\nquieres jugar nuevamente?");
+  if(con==true){
+   window.location.reload();
+  }
+ }
+}
+    </script>
+</body>
+
+</html>

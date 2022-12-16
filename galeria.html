@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="slider"> 
+            <div class="dp-wrap"> 
+              <div id="dp-slider">
+          
+                <div class="dp_item" data-class="1" data-position="1">
+                  <div class="dp-content">
+                    
+                    <h2>Perros</h2>
+                    <p> Cachorros</p>
+                    <a href="#" class="site-btn">Read More…</a>
+                  </div>
+                  <div class="dp-img">
+                    <img class="img-fluid" src="img/cachorros-1-mes16.jpg" alt="investing">
+                  </div>
+                </div>
+          
+                <div class="dp_item" data-class="2" data-position="2">
+                  <div class="dp-content">
+                    
+                    <h2>Zorro</h2>
+                    <p> This is Slide 2 </p>
+                    <a href="#" class="site-btn">Read More…</a>
+                  </div>
+                  <div class="dp-img">
+                    <img class="img-fluid" src="img/zorro.webp" alt="investing">
+                  </div>
+                </div>
+          
+                <div class="dp_item" data-class="3" data-position="3">
+                  <div class="dp-content">
+                    
+                    <h2>Panda</h2>
+                    <p> This is Slide 3 </p>
+                    <a href="#" class="site-btn">Read More…</a>
+                  </div>
+                  <div class="dp-img">
+                    <img class="img-fluid" src="img/PANDA.jpeg" alt="investing">
+                  </div>
+                </div>
+          
+                <div class="dp_item" data-class="4" data-position="4">
+                  <div class="dp-content">
+                    
+                    <h2>Perezoso</h2>
+                    <p> This is Slide 4 </p>
+                    <a href="#" class="site-btn">Read More…</a>
+                  </div>
+                  <div class="dp-img">
+                    <img class="img-fluid" src="img/perezoso.jpg" alt="investing">
+                  </div>
+                </div>
+              </div>
+              
+              <span id="dp-next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: none;
+                        stroke: #fa8c8c;
+                        stroke-miterlimit: 10;
+                        stroke-width: 7px;
+                      }
+                    </style>
+                  </defs>
+                  <path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)"/>
+                </svg>
+              </span>
+          
+              <span id="dp-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: none;
+                        stroke: #fa8c8c;
+                        stroke-miterlimit: 10;
+                        stroke-width: 7px;
+                      }
+                    </style>
+                  </defs>
+                  <path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)"/>
+                </svg>
+              </span>
+          
+              
+          
+              <ul id="dp-dots">
+                <li data-class="1" class="active"></li>
+                <li data-class="2"></li>
+                <li data-class="3"></li>
+                <li data-class="4"></li>
+              </ul>
+            </div>
+          </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
+        crossorigin="anonymous">
+</script>
+<script>
+    jQuery(document).ready(function(){
+
+function detect_active(){
+    // get active
+    var get_active = $("#dp-slider .dp_item:first-child").data("class");
+    $("#dp-dots li").removeClass("active");
+    $("#dp-dots li[data-class="+ get_active +"]").addClass("active");
+  }
+  $("#dp-next").click(function(){
+    var total = $(".dp_item").length;
+    $("#dp-slider .dp_item:first-child").hide().appendTo("#dp-slider").fadeIn();
+    $.each($('.dp_item'), function (index, dp_item) {
+      $(dp_item).attr('data-position', index + 1);
+    });
+    detect_active();
+
+  });
+
+  $("#dp-prev").click(function(){
+    var total = $(".dp_item").length;
+    $("#dp-slider .dp_item:last-child").hide().prependTo("#dp-slider").fadeIn();
+    $.each($('.dp_item'), function (index, dp_item) {
+      $(dp_item).attr('data-position', index + 1);
+    });
+
+    detect_active();
+  });
+
+  $("#dp-dots li").click(function(){
+    $("#dp-dots li").removeClass("active");
+    $(this).addClass("active");
+    var get_slide = $(this).attr('data-class');
+    console.log(get_slide);
+    $("#dp-slider .dp_item[data-class=" + get_slide + "]").hide().prependTo("#dp-slider").fadeIn();
+    $.each($('.dp_item'), function (index, dp_item) {
+      $(dp_item).attr('data-position', index + 1);
+    });
+  });
+
+
+  $("body").on("click", "#dp-slider .dp_item:not(:first-child)", function(){
+    var get_slide = $(this).attr('data-class');
+    console.log(get_slide);
+    $("#dp-slider .dp_item[data-class=" + get_slide + "]").hide().prependTo("#dp-slider").fadeIn();
+    $.each($('.dp_item'), function (index, dp_item) {
+      $(dp_item).attr('data-position', index + 1);
+    });
+
+    detect_active();
+  });
+});
+</script>
+</body>
+</html>

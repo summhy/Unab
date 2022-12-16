@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Feature-rich Accordion Slider Example</title>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../dist/css/accordion-slider.min.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/examples.css" media="screen"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../dist/js/jquery.accordionSlider.min.js"></script>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		// instantiate the accordion
+		$('#example1').accordionSlider({
+			width: 960,
+			height: 400,
+			responsiveMode: 'auto',
+			visiblePanels: 5,
+			closePanelsOnMouseOut: false,
+			autoplay: true
+		});
+
+		// change the responsive mode
+		$('.controls a').click(function(event) {
+			event.preventDefault();
+
+			if ($(this).hasClass('auto')) {
+				// change the responsive mode to 'auto' and remove the 'custom-responsive' class
+				$('#example1').removeClass('custom-responsive');
+				$('#example1').accordionSlider('responsiveMode', 'auto');
+
+				// change the arrows' visibility
+				$('.auto-arrow').show();
+				$('.custom-arrow').hide();
+			} else if ($(this).hasClass('custom')) {
+				// change the responsive mode to 'custom' and add the 'custom-responsive' 
+				// class in order to use it as a reference in the CSS code
+				$('#example1').addClass('custom-responsive');
+				$('#example1').accordionSlider('responsiveMode', 'custom');
+
+				// change the arrows' visibility
+				$('.custom-arrow').show();
+				$('.auto-arrow').hide();
+			}
+		});
+	});
+</script>
+<style>
+body { background: #fafafa; }
+.lead { font-size: 1.5rem; font-weight: 300; }
+.container { margin: 150px auto 50px auto; max-width: 960px; }
+</style>
+</head>
+
+<body>
+	<div class="container">
+	</div>
+	<!-- Accordion Slider -->
+
+	<div id="example1" class="accordion-slider">
+		<div class="as-panels">
+
+			<!-- Panel 1 -->
+			<div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?nature
+" data-retina="https://source.unsplash.com/700x500/?nature"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter" 
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 1
+				</div>
+
+				<h3 class="as-layer as-opened as-black as-padding" 
+					data-horizontal="40" data-vertical="10%" 
+					data-show-transition="left" data-hide-transition="left">
+					Lorem ipsum dolor sit amet
+				</h3>
+				<p class="as-layer as-opened as-white as-padding hide-medium-screen" 
+					data-horizontal="40" data-vertical="22%" 
+					data-show-transition="left" data-show-delay="200" data-hide-transition="left" data-hide-delay="200">
+					consectetur adipisicing elit
+				</p>
+				<p class="as-layer as-opened as-black as-padding hide-small-screen" 
+					data-horizontal="40" data-vertical="34%" data-width="350" 
+					data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</div>
+
+	        <!-- Panel 2 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?summer" data-retina="https://source.unsplash.com/700x500/?summer"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 2
+				</div>
+
+				<div class="as-layer" 
+					data-position="bottomLeft" data-horizontal="20" data-vertical="20" data-width="100%">
+					
+					<p class="as-layer as-opened as-white as-padding"
+						data-position="bottomLeft"
+						data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+						Lorem ipsum
+					</p>
+
+					<p class="as-layer as-opened as-black as-padding hide-small-screen"
+						data-position="bottomLeft" data-horizontal="120"
+						data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
+						dolor sit amet
+					</p>
+
+					<p class="as-layer as-opened as-white as-padding hide-small-screen"
+						data-position="bottomLeft" data-horizontal="245"
+						data-show-transition="left" data-hide-transition="up" data-show-delay="800">
+						consectetur adipisicing elit.
+					</p>
+				</div>
+			</div>
+
+	        <!-- Panel 3 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?workout" data-retina="https://source.unsplash.com/700x500/?workout"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 3
+				</div>
+
+				<p class="as-layer as-opened as-white as-padding" 
+					data-horizontal="center" data-vertical="44%" 
+					data-show-transition="right" data-hide-transition="left" data-show-delay="500" >
+					Lorem ipsum dolor sit amet
+				</p>
+				<p class="as-layer as-opened as-black as-padding hide-small-screen" 
+					data-horizontal="center" data-vertical="58%" 
+					data-show-transition="left" data-show-delay="700" data-hide-transition="right" data-hide-delay="200">
+					consectetur adipisicing elit
+				</p>
+			</div>
+
+	        <!-- Panel 4 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?yoga" data-retina="https://source.unsplash.com/700x500/?yoga"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 4
+				</div>
+
+				<p class="as-layer as-opened as-black as-padding" 
+					data-position="bottomLeft"
+					data-show-transition="up" data-hide-transition="down">
+					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+				</p>
+			</div>
+
+	        <!-- Panel 5 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?girl" data-retina="https://source.unsplash.com/700x500/?girl"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 5
+				</div>
+
+				<p class="as-layer as-opened as-white as-padding" 
+					data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-show-transition="down" data-show-delay="400" data-hide-transition="up">
+					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+				</p>
+			</div>
+
+	        <!-- Panel 6 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?dog" data-retina="https://source.unsplash.com/700x500/?dog"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 6
+				</div>
+
+				<p class="as-layer as-opened as-white as-padding" 
+					data-horizontal="10" data-vertical="10" data-width="35%">
+					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+				</p>
+			</div>
+
+	        <!-- Panel 7 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?water" data-retina="https://source.unsplash.com/700x500/?water"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 7
+				</div>
+
+				<p class="as-layer as-opened as-black as-padding" 
+					data-position="bottomLeft" data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-show-transition="up" data-show-delay="400" data-hide-transition="down">
+					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+				</p>
+			</div>
+
+	        <!-- Panel 8 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?animal" data-retina="https://source.unsplash.com/700x500/?animal"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 8
+				</div>
+				
+				<h3 class="as-layer as-opened as-white as-padding" 
+					data-position="topRight" data-horizontal="7%" data-vertical="40%" 
+					data-show-transition="up" data-show-delay="500">
+					Lorem ipsum dolor sit amet
+				</h3>
+				<p class="as-layer as-opened as-black as-padding hide-medium-screen" 
+					data-position="topRight" data-horizontal="7%" data-vertical="52%" 
+					data-show-transition="up" data-show-delay="700">
+					consectetur adipisicing elit
+				</p>
+				<p class="as-layer as-opened as-white as-padding hide-small-screen" 
+					data-position="topRight" data-horizontal="7%" data-vertical="64%" data-width="350" 
+					data-show-transition="up" data-show-delay="900">
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</div>
+
+			<!-- Panel 9 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?running" data-retina="https://source.unsplash.com/700x500/?running"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 9
+				</div>
+				
+				<div class="as-layer" 
+					data-position="bottomLeft" data-horizontal="5%" data-vertical="10" data-width="90%" data-height="28%">
+
+					<p class="as-layer as-opened as-black as-padding" 
+						data-show-transition="down" data-hide-transition="up">
+						Lorem ipsum dolor sit amet
+					</p>
+
+					<p class="as-layer as-opened as-white as-padding hide-small-screen" 
+						data-vertical="50"
+						data-show-transition="up" data-hide-transition="down">
+						consectetur adipisicing elit <span class="hide-medium-screen">, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+					</p>
+				</div>
+			</div>
+
+	        <!-- Panel 10 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?pool" data-retina="https://source.unsplash.com/700x500/?pool"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 10
+				</div>
+				
+				<div class="as-layer" 
+					data-position="bottomLeft" data-horizontal="30" data-vertical="30" data-width="70%" data-height="50%">
+					
+					<h3 class="as-layer as-opened as-white as-padding"
+						data-show-transition="left" data-hide-transition="right">
+						Lorem ipsum dolor sit amet
+					</h3>
+					<p class="as-layer as-opened as-black as-padding hide-small-screen" 
+						data-vertical="50" 
+						data-show-transition="left" data-show-delay="200" data-hide-transition="right" data-hide-delay="200">
+						consectetur adipisicing elit
+					</p>
+					<p class="as-layer as-opened as-white as-padding hide-medium-screen" 
+						data-vertical="100" data-width="350" 
+						data-show-transition="left" data-show-delay="400" data-hide-transition="right" data-hide-delay="500">
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+
+	        <!-- Panel 11 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?women" data-retina="https://source.unsplash.com/700x500/?women"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 11
+				</div>
+
+				<p class="as-layer as-opened as-white as-padding" 
+					data-position="bottomLeft" data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-show-transition="up">
+					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+				</p>
+			</div>
+
+	        <!-- Panel 12 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?boy" data-retina="https://source.unsplash.com/700x500/?boy"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 12
+				</div>
+
+				<div class="as-layer" 
+					data-position="topRight" data-horizontal="20" data-vertical="10%" data-width="50%" data-height="50%">
+					
+					<p class="as-layer as-opened as-white as-padding"
+						data-show-transition="right" data-hide-transition="left" data-show-delay="500">
+						Lorem ipsum dolor sit amet
+					</p>
+
+					<p class="as-layer as-opened as-black as-padding hide-small-screen"
+						data-vertical="50"
+						data-show-transition="left" data-hide-transition="right" data-show-delay="700">
+						consectetur adipisicing elit <span class="hide-medium-screen">, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+					</p>
+				</div>
+			</div>
+
+			<!-- Panel 13 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?fashion" data-retina="https://source.unsplash.com/700x500/?fashion"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 13
+				</div>
+				
+				<div class="as-layer" 
+					data-horizontal="30" data-vertical="30" data-width="100%">
+					
+					<p class="as-layer as-opened as-black as-padding"
+						data-show-transition="left" data-hide-transition="down" data-show-delay="400" data-hide-delay="200">
+						Lorem ipsum
+					</p>
+
+					<p class="as-layer as-opened as-white as-padding hide-small-screen"
+						data-horizontal="120"
+						data-show-transition="left" data-hide-transition="down" data-show-delay="600" data-hide-delay="100">
+						dolor sit amet
+					</p>
+
+					<p class="as-layer as-opened as-black as-padding hide-small-screen"
+						data-horizontal="245"
+						data-show-transition="left" data-hide-transition="down" data-show-delay="800">
+						consectetur adipisicing elit.
+					</p>
+				</div>
+			</div>
+
+	        <!-- Panel 14 -->
+	        <div class="as-panel">
+				<a href="http://bqworks.com">
+					<img class="as-background" src="../dist/css/images/blank.gif" data-src="https://source.unsplash.com/700x500/?weather" data-retina="https://source.unsplash.com/700x500/?weather"/>
+				</a>
+
+				<div class="as-layer as-closed as-white as-vertical panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Panel 14
+				</div>
+
+				<p class="as-layer as-black as-padding" 
+					data-position="bottomRight" data-horizontal="10" data-vertical="10" data-width="40%">
+					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+				</p>
+			</div>
+		</div>
+    </div>
+
+    <!-- End of Accordion Slider -->
+
+    <div class="controls">
+    	Change responsive mode: 
+    	<span class="auto-arrow">&rarr;</span> <a href="#" class="auto">Auto</a> or 
+    	<span class="custom-arrow">&rarr;</span> <a href="#" class="custom">Custom</a>
+    </div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+</body>
+</html>

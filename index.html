@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<h1>titulo de mi pagina</h1>
-<main>cuerpo</main>
+    <script>
+        var global = "global"
+
+        function variables() {
+
+            let local = "local"
+            console.log(global);
+            console.log(local);
+        }
+
+        function variables2() {
+
+            console.log(global);
+            console.log(local);
+
+        }
+        function variables3() {
+
+            const valor = 1;
+
+            console.log(valor);
+            valor = 2;
+
+            console.log(valor);
+        }
+
+        function sumatoria(a, b){
+            return a+b;
+        }
+
+        //variables();
+        //variables2();
+        //variables3();
+        var a =10;
+        function sumar (){
+            return a + 100;
+        }
+
+        var suma = sumar();
+        console.log(suma);
+
+         suma = a => a + 100
+
+        console.log(suma);
+
+
+        
+    </script>
+
 </body>
+
 </html>

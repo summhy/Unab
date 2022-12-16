@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div>
+        <p id="parrafo1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam et laudantium. Iure distinctio velit atque nam sed sapiente molestias rem quam? Enim sint optio pariatur commodi deserunt. Aliquid, reiciendis?</p>
+        <button id="boton1">JavaScript</button>
+
+        <p id="parrafo2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum animi autem, doloremque excepturi veritatis saepe culpa enim, corrupti quas amet ea ut quae sequi recusandae tenetur, quos esse nam odit!</p>
+        <button id="boton2">JQuery</button>
+
+        <p id="parrafo3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, modi corrupti maiores itaque sequi ullam autem in totam officia quam! Suscipit culpa ad enim ipsum aut voluptatum reiciendis libero sunt.</p>
+        <button id="crear" onclick="crear();">Crear</button>
+    </div>
+    <div id="secundario">
+
+    </div>
+
+    <script>
+        var e = document.getElementById("parrafo1");
+        e.style.fontSize="32px";
+        e.style.color="red";
+        var boton =document.getElementById("boton1");
+        boton.addEventListener('click',function(event){
+            alert("Botón JS");
+        })
+
+        $("#parrafo2").css("font-size","24px");
+        $("#parrafo2").css("color","green");
+        $("#boton2").click(function(event){ alert("boton Jquery");});
+
+        function crear(){
+           
+            document.getElementById("secundario").innerHTML='<img src="img/vs.webp" alt="">';
+        }
+    </script>
+    
+</body>
+</html>
